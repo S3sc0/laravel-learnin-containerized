@@ -2,7 +2,7 @@
 
 # essential installation
 apt update && apt upgrade -y
-apt install curl -y
+apt install curl git -y
 
 # apache2 installation
 apt install apache2 -y

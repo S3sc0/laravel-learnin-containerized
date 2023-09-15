@@ -15,8 +15,6 @@ else
 	# composer installation
 	curl -sS https://getcomposer.org/installer | php
 	mv composer.phar /usr/local/bin/composer
-
-	composer create-project --prefer-dist laravel/laravel autolearn
 fi
 
 cd ./autolearn && php artisan serve --host=0.0.0.0 --port=8000
