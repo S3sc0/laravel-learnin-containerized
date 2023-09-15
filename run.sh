@@ -4,16 +4,16 @@ if [ "$1" == "-c" ]; then
 	sudo docker build -t laravel .
 	sudo docker run -d -it -p8000:8000 --name laravel-cntr laravel
 
-	printf  "\n\nDone creating the container"
-
 elif [ "$1" == "-d" ]; then
-	sudo docker stop laravel-cntr 2> /dev/null
-	sudo docker rm laravel-cntr 2> /dev/null
+	sudo docker stop laravel-cntr > /dev/null
+	sudo docker rm laravel-cntr > /dev/null
 
-	sudo docker image rm -f laravel	2> /dev/null
-	echo "Done deleting the container and its dependencies"
+	sudo docker image rm -f laravel	> /dev/null
 
 else
-	echo "Usage: ./run.sh -c or -d options"
+	printf "Usage:\t./run.sh [OPTIONS]
+
+	-c for creating the container.
+	-d for deleting the container and its dependencies.\n"
 
 fi
